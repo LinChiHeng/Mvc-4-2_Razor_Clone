@@ -1,0 +1,62 @@
+﻿@using MvcRazor_Clone.Models;
+
+@model IEnumerable<MvcRazor_Clone.Models.Student>
+
+@{
+    ViewBag.Title = "學習期中考成績";
+
+    var topId = ViewBag.TopId;
+}
+
+
+<div class="jumbotron alert-success">
+    <h2>學生期中考成績</h2>
+    <P>此為期中考試國文、英文、數學之成績列表。以下要用Razor語法來執行判斷:</P>
+    <ol>
+        <li>如果單科成績低於60分,表示不及格,以紅色顯示</li>
+        <li>如果單科成績高於95分,表示優秀,以藍色顯示</li>
+        <li>如果總成績第一名者,以黃色顯示</li>
+    </ol>
+</div>
+
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Id)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Chinese)</th>
+            <th>@Html.DisplayNameFor(m => m.English)</th>
+            <th>@Html.DisplayNameFor(m => m.Math)</th>
+            <th>@Html.DisplayNameFor(m => m.Total)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(x => m.Id)</td>
+                <td>@Html.DisplayFor(x => m.Name)</td>
+
+                <!--中文-->
+                @MyHelper.DisplayScore(m.Chinese)
+
+                <!--英文-->
+                @MyHelper.DisplayScore(m.English)
+
+                <!--數學-->
+                @MyHelper.DisplayScore(m.Math)
+
+
+                <!--總分最高者-->
+                @MyHelper.DisplayTopScore(m.Id, topId, m.Total)
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section topCSS{
+    <link href="~/Assets/css/score.css" rel="stylesheet" />
+}
