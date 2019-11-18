@@ -1,14 +1,21 @@
 ﻿@model IEnumerable<MvcRazor_Clone.Models.Student>
 
 @{
-    ViewBag.Title = "ScoresRazor";
+    ViewBag.Title = "學生期中考成績";
+
+    var topId = ViewBag.TopId;
 }
 
-<h2>ScoresRazor</h2>
+<div class="jumbotron alert-success">
+    <h2>學生期中考成績</h2>
+    <P>此為期中考試國文、英文、數學之成績列表。以下要用Razor語法來執行判斷:</P>
+    <ol>
+        <li>如果單科成績低於60分,表示不及格,以紅色顯示</li>
+        <li>如果單科成績高於95分,表示優秀,以藍色顯示</li>
+        <li>如果總成績第一名者,以黃色顯示</li>
+    </ol>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
