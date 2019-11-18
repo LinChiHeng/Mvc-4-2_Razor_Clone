@@ -126,10 +126,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\card.css" />
     <Content Include="Assets\css\score.css" />
     <Content Include="Assets\images\DarthMual.jpg" />
     <Content Include="Assets\images\ElonMusk.jpg" />
@@ -182,6 +184,8 @@
     <Content Include="Views\RazorScore\GlobalHtmlHelper.cshtml" />
     <Content Include="Views\Shared\_SimpleCardPartial.cshtml" />
     <Content Include="Views\PartialView\SimpleCard.cshtml" />
+    <Content Include="Views\PartialView\ManCard.cshtml" />
+    <Content Include="Views\Shared\_CardPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
