@@ -167,6 +167,7 @@
     <Content Include="Views\RazorScore\Scores.cshtml" />
     <Content Include="Views\RazorScore\ScoresRazor.cshtml" />
     <Content Include="Views\RazorScore\ScoresRazorPure.cshtml" />
+    <Content Include="Views\RazorScore\ScoresRazorHelper.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
